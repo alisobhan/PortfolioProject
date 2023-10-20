@@ -35,6 +35,11 @@ namespace Portfolio_Project.Controllers
             return Json(new { myList });
         }
 
+        public IActionResult Shop()
+        {
+            return View();
+        }
+
         public IActionResult Create()
         {
             return View();
