@@ -7,7 +7,7 @@ namespace Portfolio_Project.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly List<Projects>
+        private readonly List<Projects> _projects = new List<Projects>();
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -20,23 +20,6 @@ namespace Portfolio_Project.Controllers
         }
 
         public IActionResult Privacy()
-        {
-            return View();
-        }
-        public IActionResult GetJsonDataTest()
-        {
-            var myList = new List<string>();
-            myList.Add("Ali");
-            myList.Add("Mohammad");
-            myList.Add("Reaza");
-            myList.Add("Nazanin");
-            myList.Add("Neda");
-            myList.Add("Parastoo");
-
-            return Json(new { myList });
-        }
-
-        public IActionResult Shop()
         {
             return View();
         }

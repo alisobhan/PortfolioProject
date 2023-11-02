@@ -1,56 +1,74 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Portfolio_Project</title>
-    <meta name="keywords" content="@ViewData["Keywords"]"/>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Portfolio_Project.styles.css" asp-append-version="true" />
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Portfolio_Project</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="GetJsonDataTest">Data</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Shop">Shop</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>نمونه کار | @ViewData["Title"]</title>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - Created by <a href="#">Ali Sobhani</a> - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+    @RenderSection("SEO", required: true)
+    
+    <link href="~/css/skel.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/style-xlarge.css" rel="stylesheet" />
+    
+</head>
+<body id="top">
+
+<header id="header">
+    <a href="#" class="image avatar">
+        <img src="~/images/avatar.jpg" alt=""/>
+    </a>
+    <h1>
+        <strong>نمونه کار من</strong>، اولین پروژه از دوره <br/>
+        Asp.net Core Mvc & Api است.<br/>
+        که توسط <a href="http://html5up.net"> موسسه آموزشی آتریا </a> تهیه شده.
+    </h1>
+
+    @* Link Generation Using Url.Action *@
+    @*<a href="@Url.Action("Index", "Home")" style="margin-left: 10px;">صفحه اصلی</a>
+        <a href="@Url.Action("Contact", "Home")">تماس با من</a>*@
+
+    @* Link Generation Using Tag Helpers *@
+    <a asp-controller="Home" asp-action="Index" style="margin-left: 10px;">صفحه اصلی</a>
+    <a asp-controller="Home" asp-action="Contact">تماس با من</a>
+
+</header>
+
+<div id="main">
+    @RenderBody()
+</div>
+
+<footer id="footer">
+    <ul class="icons">
+        <li>
+            <a href="#" class="icon fa-twitter">
+                <span class="label">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="icon fa-github">
+                <span class="label">Github</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="icon fa-dribbble">
+                <span class="label">Dribbble</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="icon fa-envelope-o">
+                <span class="label">Email</span>
+            </a>
+        </li>
+    </ul>
+</footer>
+
+<script src="~/js/jquery.min.js"></script>
+<script src="~/js/jquery.poptrox.min.js"></script>
+<script src="~/js/skel.min.js"></script>
+<script src="~/js/init.js"></script>
+
+@RenderSection("Scripts", required: false)
+
 </body>
 </html>
