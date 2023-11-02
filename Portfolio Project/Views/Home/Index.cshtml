@@ -1,4 +1,4 @@
-﻿@model List<Portfolio>
+﻿@model List<Projects>
 
 @{
     ViewData["Title"] = "صفحه اصلی سایت";
@@ -28,10 +28,10 @@
         @foreach (var portfolio in Model)
         {
             <article class="6u 12u$(xsmall) work-item" style="width: 33%;">
-                <a href="~/images/thumbs/@portfolio.Image" class="image fit thumb" alt="@portfolio.Title" title="@portfolio.Description">
-                    <img src="~/images/thumbs/@portfolio.Image" alt="@portfolio.Title" title="@portfolio.Description"/>
+                <a href="~/images/thumbs/@portfolio.Image" class="image fit thumb" alt="@portfolio.Name" title="@portfolio.Description">
+                    <img src="~/images/thumbs/@portfolio.Image" alt="@portfolio.Name" title="@portfolio.Description"/>
                 </a>
-                <h3>@portfolio.Title</h3>
+                <h3>@portfolio.Name</h3>
                 <p>@portfolio.Description</p>
             </article>
         }
