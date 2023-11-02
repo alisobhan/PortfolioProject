@@ -2,7 +2,7 @@
 
 namespace Portfolio_Project.Models
 {
-    public class Protfolio
+    public class Projects
     {
         int MAX_NAME_LENGHT = 100;
         
@@ -12,9 +12,10 @@ namespace Portfolio_Project.Models
         public string Name { get; set; }
         public string Image { get; set; }
         public string Description { get; set; }
+        public Client? Client { get; set; }
 
 
-        public Protfolio(int id, string name, string image, string description)
+        public Projects(int id, string name, string image, string description, Client client)
         {
             ValidateName(name);
 
@@ -22,6 +23,7 @@ namespace Portfolio_Project.Models
             Name = name;
             Image = image;
             Description = description;
+            Client = client;
         }
 
 
